@@ -33,9 +33,15 @@
     <ClInclude Include="src\PEngine\EntryPoint.h">
       <Filter>헤더 파일\PEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\PEngine\Log.h">
+      <Filter>헤더 파일\PEngine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\PEngine\Application.cpp">
+      <Filter>소스 파일\PEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PEngine\Log.cpp">
       <Filter>소스 파일\PEngine</Filter>
     </ClCompile>
   </ItemGroup>
