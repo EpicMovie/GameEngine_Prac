@@ -21,6 +21,9 @@ project "PEngine"
 	pchheader "hzpch.h"
 	pchsource "PEngine/src/hzpch.cpp"
 
+	pchheader "ppch.h"
+	pchsource "PEngine/src/ppch.cpp"
+
 	files 
 	{
 		"%{prj.name}/src/**.h", 
