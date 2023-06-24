@@ -17,6 +17,9 @@ project "PEngine"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("intermediate/" .. outputdir .. "/%{prj.name}")
+	
+	pchheader "hzpch.h"
+	pchsource "PEngine/src/hzpch.cpp"
 
 	files 
 	{
@@ -64,7 +67,7 @@ project "Sandbox"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("intermediate/" .. outputdir .. "/%{prj.name}")
-
+	
 	files 
 	{
 		"%{prj.name}/src/**.h",

@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace PEngine
 {
 	class PEngine_API WindowResizeEvent : public Event

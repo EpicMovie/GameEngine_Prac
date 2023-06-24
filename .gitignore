@@ -1,3 +1,8 @@
 .vs
 bin/
 intermediate/
+*.dll
+*.exp
+*.lib
+*.pdb
+*.exe
