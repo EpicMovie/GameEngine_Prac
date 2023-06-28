@@ -7,6 +7,9 @@
     <Filter Include="PEngine\Events">
       <UniqueIdentifier>{4F56315D-3B24-2563-24B8-9589102501C8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\PEngine.h" />
@@ -34,7 +37,13 @@
     <ClInclude Include="src\PEngine\Log.h">
       <Filter>PEngine</Filter>
     </ClInclude>
-    <ClInclude Include="src\hzpch.h" />
+    <ClInclude Include="src\PEngine\Window.h">
+      <Filter>PEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\WindowsWindow.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ppch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\PEngine\Application.cpp">
@@ -43,6 +52,9 @@
     <ClCompile Include="src\PEngine\Log.cpp">
       <Filter>PEngine</Filter>
     </ClCompile>
-    <ClCompile Include="src\hzpch.cpp" />
+    <ClCompile Include="src\Platform\WindowsWindow.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ppch.cpp" />
   </ItemGroup>
 </Project>

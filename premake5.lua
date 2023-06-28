@@ -10,6 +10,11 @@ workspace "PEngine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["glfw"] = "PEngine/vendor/glfw/include"
+
+include "PEngine/vendor/glfw"
+
 project "PEngine"
 	location "PEngine"
 	kind "SharedLib"
@@ -18,9 +23,6 @@ project "PEngine"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("intermediate/" .. outputdir .. "/%{prj.name}")
 	
-	pchheader "hzpch.h"
-	pchsource "PEngine/src/hzpch.cpp"
-
 	pchheader "ppch.h"
 	pchsource "PEngine/src/ppch.cpp"
 
@@ -33,7 +35,14 @@ project "PEngine"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.glfw}",
+	}
+
+	links
+	{
+		"glfw",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -43,7 +52,7 @@ project "PEngine"
 		defines 
 		{
 			"PE_PLATFORM_WINDOWS",
-			"PE_BUILD_DLL"
+			"PE_BUILD_DLL",
 		}
 		postbuildcommands
 		{
@@ -74,13 +83,13 @@ project "Sandbox"
 	files 
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
 	}
 
 	includedirs
 	{
 		"PEngine/vendor/spdlog/include",
-		"PEngine/src"
+		"PEngine/src",
 	}
 
 	links
