@@ -72,7 +72,7 @@ namespace PEngine
 			int m_Button;
 	};
 
-	class PEngine_API MouseButtonPressedEvent : MouseButtonEvent
+	class PEngine_API MouseButtonPressedEvent : public MouseButtonEvent
 	{
 		public:
 			MouseButtonPressedEvent(int button)
@@ -90,7 +90,7 @@ namespace PEngine
 			EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
 
-	class PEngine_API MouseButtonReleasedEvent : MouseButtonEvent
+	class PEngine_API MouseButtonReleasedEvent : public  MouseButtonEvent
 	{
 		public:
 			MouseButtonReleasedEvent(int button)
