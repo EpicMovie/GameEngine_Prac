@@ -53,6 +53,7 @@ project "PEngine"
 		{
 			"PE_PLATFORM_WINDOWS",
 			"PE_BUILD_DLL",
+			"PE_ENABLE_ASSERTS"
 		}
 		postbuildcommands
 		{

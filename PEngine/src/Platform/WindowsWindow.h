@@ -9,7 +9,7 @@ namespace PEngine
 	class WindowsWindow : public Window
 	{
 	public:
-		WindowsWindow(const WindowsProps& props);
+		WindowsWindow(const WindowProps& props);
 		virtual ~WindowsWindow() override;
 
 		virtual void OnUpdate() override;
@@ -22,7 +22,7 @@ namespace PEngine
 		virtual bool IsVSync() const override;
 
 	private:
-		virtual void Init(const WindowsProps& props);
+		virtual void Init(const WindowProps& props);
 		virtual void Shutdown();
 
 	private:

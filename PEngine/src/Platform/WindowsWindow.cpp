@@ -6,12 +6,12 @@ namespace PEngine
 {
 	static bool s_GLFWInitialized = false;
 
-	WIndow* Window::Create(const WindowProps& props)
+	Window* Window::Create(const WindowProps& props)
 	{
 		return new WindowsWindow(props);
 	}
 
-	WindowsWindow::WindowsWindow(const WindowsProp& props)
+	WindowsWindow::WindowsWindow(const WindowProps& props)
 	{
 		Init(props);
 	}
@@ -21,18 +21,18 @@ namespace PEngine
 		Shutdown();
 	}
 
-	void WindowsWindow::Init(const WindowsProp& props)
+	void WindowsWindow::Init(const WindowProps& props)
 	{
-		mData.Title = props.Title;
-		mData.Width = props.Width;
-		mData.Height = props.Height;
+		m_Data.Title = props.Title;
+		m_Data.Width = props.Width;
+		m_Data.Height = props.Height;
 
 		PE_CORE_INFO("Creating Widnow {0} ({1}, {2})", props.Title, props.Width, props.Height);
 
 		if (!s_GLFWInitialized)
 		{
 			int sucess = glfwInit();
-			PE_CORE_ASSET(sucess, "Couldn't initialize GLFW!");
+			PE_CORE_ASSERT(sucess, "Couldn't initialize GLFW!");
 
 			s_GLFWInitialized = true;
 		}
